@@ -22,9 +22,9 @@ validator:
   ntp: [0.pool.ntp.org, 1.pool.ntp.org] # List of String
   mtu_size: 1500 # expected network MTU size in byte
   releases:
-  - name: bosh-openstack-cpi
-    url: https://bosh.io/d/github.com/cloudfoundry-incubator/bosh-openstack-cpi-release?v=39
-    sha1: 23d565ae5a90c0889e9832354589221ee8d41695
+  - name: bosh-huaweicloud-cpi
+    url: https://obs-bosh.obs.cn-north-1.myhwclouds.com/bosh-huaweicloud-cpi-release.tgz
+    sha1: ea97fba98f99c959ad96e040fe5be4fd40fc7f98
 
 cloud_config:
   vm_types: # See https://bosh.io/docs/cloud-config.html#vm-types
