@@ -16,3 +16,9 @@ $ ssh-keygen -t rsa -b 4096 -N "" -f cf-validator.rsa_id
 * import cf-validator key pair in huaweicloud 
 
 
+* change validator.template.yml to validator.yml  and use your own value instead of <replace-me> in validator.yml
+
+## run
+
+ ./validate --stemcell bosh-stemcell-3541.10-openstack-kvm-ubuntu-trusty-go_agent.tgz --config validator.yml
+
