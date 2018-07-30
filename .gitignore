@@ -1,0 +1,6 @@
+.idea
+*.rsa_id*
+cpi.json
+/*.yml
+!/validator.template.yml
+vendor/cache/
