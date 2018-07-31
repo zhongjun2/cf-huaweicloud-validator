@@ -4,22 +4,22 @@ module Validator
       class << self
         def compute
           handle_socket_error do
-            Fog::Compute::OpenStack.new(convert_to_fog_params(openstack_params))
+            Fog::Compute::HuaweiCloud.new(convert_to_fog_params(openstack_params))
           end
         end
 
         def network
           handle_socket_error do
-            Fog::Network::OpenStack.new(convert_to_fog_params(openstack_params))
+            Fog::Network::HuaweiCloud.new(convert_to_fog_params(openstack_params))
           end
         end
 
         def image
           handle_socket_error do
             begin
-              Fog::Image::OpenStack::V2.new(convert_to_fog_params(openstack_params))
-            rescue Fog::OpenStack::Errors::ServiceUnavailable
-              Fog::Image::OpenStack::V1.new(convert_to_fog_params(openstack_params))
+              Fog::Image::HuaweiCloud::V2.new(convert_to_fog_params(openstack_params))
+            rescue Fog::HuaweiCloud::Errors::ServiceUnavailable
+              Fog::Image::HuaweiCloud::V1.new(convert_to_fog_params(openstack_params))
             end
           end
         end
@@ -27,9 +27,9 @@ module Validator
         def volume
           handle_socket_error do
             begin
-              Fog::Volume::OpenStack::V2.new(convert_to_fog_params(openstack_params))
-            rescue Fog::OpenStack::Errors::ServiceUnavailable, Fog::Errors::NotFound
-              Fog::Volume::OpenStack::V1.new(convert_to_fog_params(openstack_params))
+              Fog::Volume::HuaweiCloud::V2.new(convert_to_fog_params(openstack_params))
+            rescue Fog::HuaweiCloud::Errors::ServiceUnavailable, Fog::Errors::NotFound
+              Fog::Volume::HuaweiCloud::V1.new(convert_to_fog_params(openstack_params))
             end
           end
         end
@@ -39,7 +39,7 @@ module Validator
           fog_params.merge!(storage_params)
 
           handle_socket_error do
-            Fog::Storage::OpenStack.new(fog_params)
+            Fog::Storage::HuaweiCloud.new(fog_params)
           end
         end
 
@@ -71,14 +71,14 @@ module Validator
         def convert_to_fog_params(options)
           add_exconn_instrumentor(options)
           {
-              :openstack_auth_url => options['auth_url'],
-              :openstack_username => options['username'],
-              :openstack_api_key => options['api_key'],
-              :openstack_tenant => options['tenant'],
-              :openstack_project_name => options['project'],
-              :openstack_domain_name => options['domain'],
-              :openstack_region => options['region'],
-              :openstack_endpoint_type => options['endpoint_type'],
+              :huaweicloud_auth_url => options['auth_url'],
+              :huaweicloud_username => options['username'],
+              :huaweicloud_api_key => options['api_key'],
+              :huaweicloud_tenant => options['tenant'],
+              :huaweicloud_project_name => options['project'],
+              :huaweicloud_domain_name => options['domain'],
+              :huaweicloud_region => options['region'],
+              :huaweicloud_endpoint_type => options['endpoint_type'],
               :connection_options => options['connection_options']
           }
         end

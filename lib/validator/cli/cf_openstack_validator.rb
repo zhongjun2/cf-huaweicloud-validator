@@ -74,7 +74,7 @@ module Validator::Cli
       with_state_file(message, @context.cpi_release_path, @context.extracted_cpi_release_dir) do
         delete_old_cpi
         deep_extract_release(@context.cpi_release_path)
-        release_packages(@context.extracted_cpi_release_dir, ['ruby_huaweicloud_cpi']).each do |package|
+        release_packages(@context.extracted_cpi_release_dir, ['ruby_openstack_cpi']).each do |package|
           compile_package(package)
         end
         render_cpi_executable
@@ -221,15 +221,15 @@ module Validator::Cli
     end
 
     def add_cpi_bin_env
-      unless File.exists?(@context.huaweicloud_cpi_bin_from_env)
-        raise Validator::Api::ValidatorError, "CPI executable is not found at OPENSTACK_CPI_BIN=#{@context.huaweicloud_cpi_bin_from_env}"
+      unless File.exists?(@context.openstack_cpi_bin_from_env)
+        raise Validator::Api::ValidatorError, "CPI executable is not found at OPENSTACK_CPI_BIN=#{@context.openstack_cpi_bin_from_env}"
       end
 
-      if File.directory?(@context.huaweicloud_cpi_bin_from_env)
-        raise Validator::Api::ValidatorError, "OPENSTACK_CPI_BIN points to a folder and not an executable. (#{@context.huaweicloud_cpi_bin_from_env})"
+      if File.directory?(@context.openstack_cpi_bin_from_env)
+        raise Validator::Api::ValidatorError, "OPENSTACK_CPI_BIN points to a folder and not an executable. (#{@context.openstack_cpi_bin_from_env})"
       end
 
-      @context.cpi_bin_path = @context.huaweicloud_cpi_bin_from_env
+      @context.cpi_bin_path = @context.openstack_cpi_bin_from_env
       puts "OPENSTACK_CPI_BIN is set in ENV. Using already installed OpenStack CPI from `#{@context.openstack_cpi_bin_from_env}`."
     end
 
@@ -264,7 +264,7 @@ module Validator::Cli
     end
 
     def cpi_bin_env?
-      @context.huaweicloud_cpi_bin_from_env != nil
+      @context.openstack_cpi_bin_from_env != nil
     end
 
     def is_dir_empty?
