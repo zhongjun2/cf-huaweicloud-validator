@@ -3,7 +3,7 @@ module Validator::Cli
 
   class Context
 
-    attr_reader :huaweicloud_cpi_bin_from_env, :working_dir, :config, :cpi_json_path, :jobs_config_path, :cacert_path
+    attr_reader :openstack_cpi_bin_from_env, :working_dir, :config, :cpi_json_path, :jobs_config_path, :cacert_path
 
     attr_accessor :cpi_bin_path, :cpi_release_path
 
@@ -14,7 +14,7 @@ module Validator::Cli
       ensure_working_directory(@working_dir)
       @working_dir = File.expand_path(@working_dir)
       @path_from_env = ENV['PATH']
-      @huaweicloud_cpi_bin_from_env = ENV['OPENSTACK_CPI_BIN']
+      @openstack_cpi_bin_from_env = ENV['OPENSTACK_CPI_BIN']
       @cpi_bin_path = File.join(@working_dir, 'cpi')
       @config = Validator::Api::Configuration.new(config_path)
       @jobs_config_path = File.join(@working_dir, 'jobs', 'huaweicloud_cpi', 'config')
@@ -55,12 +55,12 @@ module Validator::Cli
     end
 
     def path_environment
-      cpi_executable_path = File.join(working_dir, 'packages', 'ruby_huaweicloud_cpi', 'bin')
+      cpi_executable_path = File.join(working_dir, 'packages', 'ruby_openstack_cpi', 'bin')
       "#{cpi_executable_path}:#{@path_from_env}"
     end
 
     def gems_folder
-      File.join(working_dir, 'packages', 'ruby_huaweicloud_cpi', 'lib', 'ruby', 'gems', '*')
+      File.join(working_dir, 'packages', 'ruby_openstack_cpi', 'lib', 'ruby', 'gems', '*')
     end
 
     def packages_path

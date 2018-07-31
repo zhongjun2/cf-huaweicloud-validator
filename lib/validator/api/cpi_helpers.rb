@@ -97,7 +97,8 @@ module Validator
             'type' => 'manual',
             'ip' => Validator::Api.configuration.validator['static_ip'],
             'cloud_properties' => {
-              'net_id' => Validator::Api.configuration.validator['network_id']
+              'net_id' => Validator::Api.configuration.validator['network_id'],
+              'vpc_id' => Validator::Api.configuration.validator['vpc_id']
             }
           }
         }
