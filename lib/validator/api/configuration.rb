@@ -19,7 +19,7 @@ module Validator
       end
 
       def openstack
-        Converter.convert_and_apply_defaults(all.fetch('openstack'))
+        Converter.convert_and_apply_defaults(all.fetch('huaweicloud'))
       end
 
       def cloud_config

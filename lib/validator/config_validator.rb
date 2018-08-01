@@ -17,7 +17,7 @@ module Validator
 
     CONFIG_SCHEMA = Membrane::SchemaParser.parse do
       {
-          'openstack' => {
+          'huaweicloud' => {
               'auth_url' => ReplacedString.new,
               'username' => ReplacedString.new,
               'password' => ReplacedString.new,

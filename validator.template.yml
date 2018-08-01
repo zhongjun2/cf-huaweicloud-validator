@@ -1,5 +1,5 @@
 ---
-openstack:
+huaweicloud:
   auth_url: <replace-me> # Keystone V3 URL
   username: <replace-me> # String
   password: <replace-me> # String

@@ -10,7 +10,7 @@ module Validator::Cli
     def initialize(cli_options)
       @cli_options = cli_options
       @cpi_release_path = @cli_options[:cpi_release]
-      @working_dir = @cli_options[:working_dir] || "#{ENV['HOME']}/.cf-openstack-validator"
+      @working_dir = @cli_options[:working_dir] || "#{ENV['HOME']}/.cf-huaweicloud-validator"
       ensure_working_directory(@working_dir)
       @working_dir = File.expand_path(@working_dir)
       @path_from_env = ENV['PATH']
