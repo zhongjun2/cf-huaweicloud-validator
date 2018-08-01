@@ -37,7 +37,8 @@ module Validator
               optional('human_readable_vm_names') => bool
           },
           'validator' => {
-              'network_id' => ReplacedString.new,
+              'subnet_id' => ReplacedString.new,
+              'vpc_id' => ReplacedString.new,
               'floating_ip' => ReplacedString.new,
               'static_ip' => ReplacedString.new,
               'private_key_path' => String,
