@@ -14,7 +14,7 @@ openstack:
     # ca_cert: <replace-me> # Multiline yaml String containing certificate chain
 
 validator:
-  use_external_ip: false # Defines from where the Validator is executed. False means from inside your OpenStack.
+  use_external_ip: false # Defines from where the Validator is executed. False means from inside your HuaweiCloud.
   network_id: <replace-me> # String UUID
   floating_ip: <replace-me> # String IP
   static_ip: <replace-me> # String IP. This IP is used to create a VM with a static IP.
@@ -32,7 +32,7 @@ cloud_config:
     cloud_properties:
       instance_type: <replace-me> # String
       # availability_zone: <replace-me> # String
-      # root_disk: {size: 20} # Integer, size in GiB. Used together with openstack.boot_from_volume.
+      # root_disk: {size: 20} # Integer, size in GiB. Used together with huaweicloud.boot_from_volume.
 
 extensions:
   paths: [] # paths pointing to a directory. Absolute or relative to this config file.
