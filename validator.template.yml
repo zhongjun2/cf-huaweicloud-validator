@@ -23,8 +23,8 @@ validator:
   mtu_size: 1500 # expected network MTU size in byte
   releases:
   - name: bosh-huaweicloud-cpi
-    url: https://obs-bosh.obs.cn-north-1.myhwclouds.com/bosh-huaweicloud-cpi-release.tgz
-    sha1: ea97fba98f99c959ad96e040fe5be4fd40fc7f98
+    url: https://obs-bosh-hongkong.obs.ap-southeast-1.myhwclouds.com/bosh-huaweicloud-cpi-release.tgz
+    sha1: e305c29959ac84aeccf45c39ef1072bc49dbdf97
 
 cloud_config:
   vm_types: # See https://bosh.io/docs/cloud-config.html#vm-types
