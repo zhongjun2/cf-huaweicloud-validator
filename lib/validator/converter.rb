@@ -23,9 +23,9 @@ module Validator
     def self.cpi_config(openstack_params, registry_port)
       {
         "cloud" => {
-          "plugin" => "openstack",
+          "plugin" => "huaweicloud",
           "properties" => {
-            "openstack" => openstack_params,
+            "huaweicloud" => openstack_params,
             "registry" => {
               "endpoint" => "http://localhost:#{registry_port}",
               "user" => "fake",
