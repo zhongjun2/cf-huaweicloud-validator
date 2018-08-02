@@ -42,7 +42,7 @@ module Validator
 
       def openstack_suite
         return @openstack_suite if @openstack_suite
-        @openstack_suite = RSpec.describe 'Your OpenStack', order: :openstack do
+        @openstack_suite = RSpec.describe 'Your huaweicloud', order: :openstack do
 
           before(:all) do
             _, @server_thread = create_server(registry_port)
