@@ -11,7 +11,7 @@
 ```bash
 $ ssh-keygen -t rsa -b 4096 -N "" -f cf-validator.rsa_id
 ```
-  * Upload the generated public key to OpenStack as `cf-validator`
+  * Upload the generated public key to HuaweiCLoud as `cf-validator`
 
 * import cf-validator key pair in huaweicloud 
 
@@ -20,5 +20,5 @@ $ ssh-keygen -t rsa -b 4096 -N "" -f cf-validator.rsa_id
 
 ## run
 
- ./validate --stemcell bosh-stemcell-3541.10-openstack-kvm-ubuntu-trusty-go_agent.tgz --config validator.yml
+ ./validate --stemcell bosh-stemcell-1.0-huaweicloud-xen-ubuntu-trusty-go_agent.tgz --config validator.yml
 

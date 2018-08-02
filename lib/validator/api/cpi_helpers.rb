@@ -55,7 +55,7 @@ module Validator
             fail "Failed to ssh to VM with floating IP: Permission denied.\n" +
               "Possible causes:\n" +
               "- SSH key mismatch\n" +
-              "- the key has not been provisioned, because the OpenStack metadata service was not reachable\n\n" +
+              "- the key has not been provisioned, because the HuaweiCloud metadata service was not reachable\n\n" +
               "Error is: #{err}"
           end
 
