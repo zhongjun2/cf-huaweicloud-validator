@@ -74,7 +74,7 @@ module Validator::Cli
       with_state_file(message, @context.cpi_release_path, @context.extracted_cpi_release_dir) do
         delete_old_cpi
         deep_extract_release(@context.cpi_release_path)
-        release_packages(@context.extracted_cpi_release_dir, ['ruby_openstack_cpi']).each do |package|
+        release_packages(@context.extracted_cpi_release_dir, ['ruby_huaweicloud_cpi']).each do |package|
           compile_package(package)
         end
         render_cpi_executable
