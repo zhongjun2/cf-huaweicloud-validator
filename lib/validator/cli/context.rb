@@ -55,12 +55,12 @@ module Validator::Cli
     end
 
     def path_environment
-      cpi_executable_path = File.join(working_dir, 'packages', 'ruby_openstack_cpi', 'bin')
+      cpi_executable_path = File.join(working_dir, 'packages', 'ruby_huaweicloud_cpi', 'bin')
       "#{cpi_executable_path}:#{@path_from_env}"
     end
 
     def gems_folder
-      File.join(working_dir, 'packages', 'ruby_openstack_cpi', 'lib', 'ruby', 'gems', '*')
+      File.join(working_dir, 'packages', 'ruby_huaweicloud_cpi', 'lib', 'ruby', 'gems', '*')
     end
 
     def packages_path
