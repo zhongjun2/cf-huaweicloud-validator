@@ -1,3 +1,10 @@
+CF HuaweiCloud Validator
+==============================
+
+bosh-huaweicloud-cpi-release is a tool to check if Huaweicloud installation ready to run BOSH and install Cloud Foundry
+It is based on [cf-openstack-validator](https://github.com/cloudfoundry-incubator/cf-openstack-validator)
+
+
 ## Prerequisites
 
 ### Huaweicloud
