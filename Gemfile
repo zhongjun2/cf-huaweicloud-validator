@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'fog-huaweicloud', '~>0.0.2'
+gem 'fog-huaweicloud', '~>0.0.3'
 gem 'excon', '~>0.49'
 gem 'rspec', '~> 3.5.0'
 gem 'membrane', '~> 1.1.0'
